@@ -6,7 +6,7 @@ export const EmailForm = () => {
     <Box>
       <Typography>Sign Up</Typography>
       <Typography>Let's validate your email first</Typography>
-      <TextField label="your email" placeholder="Insert your email" />
+      <TextField label="Insert your email" />
     </Box>
   );
 };

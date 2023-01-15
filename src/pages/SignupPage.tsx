@@ -25,7 +25,9 @@ const SignupPage = () => {
       {step}
       <Box>
         {isLastStep ? (
-          <Button variant="contained">Register</Button>
+          <Button variant="contained" onClick={() => console.log(data)}>
+            Register
+          </Button>
         ) : (
           <Button variant="contained" onClick={next}>
             Next

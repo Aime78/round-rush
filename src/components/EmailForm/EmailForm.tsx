@@ -13,7 +13,7 @@ export const EmailForm = ({ email, updateFields }: emailFormProp) => {
     <Box>
       <Typography>Sign Up</Typography>
       <Typography>Let's validate your email first</Typography>
-      <TextField label="Insert your email" value={email} onChange={(e) => updateFields({ email: e.target.value })} />
+      <TextField label="Insert your email" type="email" value={email} onChange={(e) => updateFields({ email: e.target.value })} />
     </Box>
   );
 };

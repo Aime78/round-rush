@@ -15,7 +15,7 @@ export const NamePasswordForm = ({ fullName, password, updateFields }: NamePassw
       <Typography>SignUp</Typography>
       <Typography>Fill up your account information</Typography>
       <TextField label="Insert your full name" value={fullName} onChange={(e) => updateFields({ fullName: e.target.value })} />
-      <TextField label="Choose your password" type="password" autoComplete="false" value={password} onChange={(e) => updateFields({ fullName: e.target.value })} />
+      <TextField label="Choose your password" type="password" autoComplete="false" value={password} onChange={(e) => updateFields({ password: e.target.value })} />
     </Box>
   );
 };

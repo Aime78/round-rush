@@ -1,21 +1,32 @@
 import { Box, TextField, Typography, MenuItem, Checkbox, FormControlLabel } from '@mui/material';
 
-export const CompanyInfoForm = () => {
+type CompanyInfoFormData = {
+  companyName: string;
+  spaceName: string;
+  industry: string;
+  employees: string;
+};
+
+type CompanyInfoFormProps = CompanyInfoFormData & {
+  updateFields: (fields: Partial<CompanyInfoFormData>) => void;
+};
+
+export const CompanyInfoForm = ({ companyName, spaceName, industry, employees, updateFields }: CompanyInfoFormProps) => {
   return (
     <Box>
       <Typography>Sign up</Typography>
       <Typography>Create your company space</Typography>
       <Box>
         <Typography>Company Name</Typography>
-        <TextField label="company name" />
+        <TextField label="company name" value={companyName} onChange={(e) => updateFields({ companyName: e.target.value })} />
         <Typography>Your space will be</Typography>
-        <TextField label="Your space will be" />
+        <TextField label="Your space will be" value={spaceName} onChange={(e) => updateFields({ spaceName: e.target.value })} />
         <Typography>Industry</Typography>
-        <TextField select defaultValue="Industry type" label="Industry">
+        <TextField select defaultValue="Industry type" label="Industry" value={industry} onChange={(e) => updateFields({ industry: e.target.value })}>
           <MenuItem>Software development</MenuItem>
         </TextField>
         <Typography>Number of employees</Typography>
-        <TextField select defaultValue="Select size.." label="company name">
+        <TextField select defaultValue="Select size.." label="company name" value={employees} onChange={(e) => updateFields({ employees: e.target.value })}>
           <MenuItem>1-10</MenuItem>
           <MenuItem>10-100</MenuItem>
           <MenuItem>100-1000</MenuItem>

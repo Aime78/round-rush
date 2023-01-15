@@ -1,14 +1,37 @@
+import { useState } from 'react';
 import EmailForm from '../components/EmailForm';
-import { Button } from '@mui/material';
+import { Button, Box } from '@mui/material';
 import NamePasswordForm from '../components/NamePasswordForm';
 import CompanyInfoForm from '../components/CompanyInfoForm';
+import { useMultistepForm } from '../hooks/useMultistepForm';
+import { USER_INITIAL_DATA } from '../constants/USER_INITIAL_DATA';
+import { UserDataInterface } from '../types/userDataInterface';
+
 const SignupPage = () => {
+  const [data, setData] = useState(USER_INITIAL_DATA);
+  const updateFields = (fields: Partial<UserDataInterface>) => {
+    setData((prev) => {
+      return { ...prev, ...fields };
+    });
+  };
+  const { step, next, isLastStep } = useMultistepForm([
+    <EmailForm {...data} updateFields={updateFields} />,
+    <NamePasswordForm {...data} updateFields={updateFields} />,
+    <CompanyInfoForm {...data} updateFields={updateFields} />,
+  ]);
+
   return (
     <div>
-      <EmailForm />
-      <NamePasswordForm />
-      <CompanyInfoForm />
-      <Button variant="contained">Next</Button>
+      {step}
+      <Box>
+        {isLastStep ? (
+          <Button variant="contained">Register</Button>
+        ) : (
+          <Button variant="contained" onClick={next}>
+            Next
+          </Button>
+        )}
+      </Box>
     </div>
   );
 };

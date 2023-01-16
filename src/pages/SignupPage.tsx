@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import EmailForm from '../components/EmailForm';
 import { Button, Box } from '@mui/material';
 import NamePasswordForm from '../components/NamePasswordForm';
@@ -8,24 +9,33 @@ import { USER_INITIAL_DATA } from '../constants/USER_INITIAL_DATA';
 import { UserDataInterface } from '../types/userDataInterface';
 import { companies } from '../data/companies';
 import AuthLayout from '../layout/AuthLayout/AuthLayout';
+import { signUpcompany } from '../services/signUpcompany';
 
 const SignupPage = () => {
   const [data, setData] = useState(USER_INITIAL_DATA);
   const [doescompanyExist, setDoescompanyExist] = useState(false);
+  const navigate = useNavigate();
+
   const updateFields = (fields: Partial<UserDataInterface>) => {
     setData((prev) => {
       return { ...prev, ...fields };
     });
   };
 
-  const signUp = () => {
+  const signUp = async () => {
     const isCompanythere = companies.includes(data.spaceName);
     if (isCompanythere) {
-      console.log('it is there');
       setDoescompanyExist(true);
       return;
     }
+    const response = (await signUpcompany(data)) as any;
+    if (response.status === 201) {
+      navigate('/login');
+    } else {
+      navigate('/signup');
+    }
   };
+
   const { step, next, isLastStep } = useMultistepForm([
     <EmailForm {...data} updateFields={updateFields} />,
     <NamePasswordForm {...data} updateFields={updateFields} />,

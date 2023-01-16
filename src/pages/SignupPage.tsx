@@ -6,6 +6,7 @@ import CompanyInfoForm from '../components/CompanyInfoForm';
 import { useMultistepForm } from '../hooks/useMultistepForm';
 import { USER_INITIAL_DATA } from '../constants/USER_INITIAL_DATA';
 import { UserDataInterface } from '../types/userDataInterface';
+import AuthLayout from '../layout/AuthLayout/AuthLayout';
 
 const SignupPage = () => {
   const [data, setData] = useState(USER_INITIAL_DATA);
@@ -21,20 +22,20 @@ const SignupPage = () => {
   ]);
 
   return (
-    <div>
+    <AuthLayout isLastStep={isLastStep} description="signing up a new account">
       {step}
-      <Box>
+      <Box sx={{ width: '100%' }} mt={2}>
         {isLastStep ? (
-          <Button variant="contained" onClick={() => console.log(data)}>
+          <Button variant="contained" onClick={() => console.log(data)} sx={{ width: '100%', background: '#29C293' }}>
             Register
           </Button>
         ) : (
-          <Button variant="contained" onClick={next}>
+          <Button color="primary" variant="contained" onClick={next} sx={{ width: '100%' }}>
             Next
           </Button>
         )}
       </Box>
-    </div>
+    </AuthLayout>
   );
 };
 

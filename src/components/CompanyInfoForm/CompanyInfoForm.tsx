@@ -7,13 +7,14 @@ type CompanyInfoFormData = {
   spaceName: string;
   industry: string;
   employees: string;
+  doescompanyExist: boolean;
 };
 
 type CompanyInfoFormProps = CompanyInfoFormData & {
   updateFields: (fields: Partial<CompanyInfoFormData>) => void;
 };
 
-export const CompanyInfoForm = ({ companyName, spaceName, industry, employees, updateFields }: CompanyInfoFormProps) => {
+export const CompanyInfoForm = ({ companyName, spaceName, industry, employees, doescompanyExist, updateFields }: CompanyInfoFormProps) => {
   return (
     <>
       <Typography sx={{ ...styleFormTitle }}>Sign up</Typography>
@@ -24,7 +25,15 @@ export const CompanyInfoForm = ({ companyName, spaceName, industry, employees, u
         <Typography sx={{ ...companyDescriptionStyle }}>Company Name</Typography>
         <TextField size="small" sx={{ ...companyInputStyle }} label="company name" value={companyName} onChange={(e) => updateFields({ companyName: e.target.value })} />
         <Typography sx={{ ...companyDescriptionStyle }}>Your space will be</Typography>
-        <TextField size="small" sx={{ ...companyInputStyle }} label="Your space will be" value={spaceName} onChange={(e) => updateFields({ spaceName: e.target.value })} />
+        <TextField
+          size="small"
+          sx={{ ...companyInputStyle, border: `${doescompanyExist ? 'none' : '1px solid #D9DBDE'}` }}
+          label="Your space will be"
+          value={spaceName}
+          onChange={(e) => updateFields({ spaceName: e.target.value })}
+          error={doescompanyExist ? true : false}
+          helperText={doescompanyExist ? 'This space name is not available' : ''}
+        />
         <Typography sx={{ ...companyDescriptionStyle }}>Industry</Typography>
         <TextField size="small" sx={{ ...companyInputStyle }} select defaultValue="Industry type" label="Industry" value={industry} onChange={(e) => updateFields({ industry: e.target.value })}>
           <MenuItem value="software">Software development</MenuItem>

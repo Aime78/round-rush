@@ -5,6 +5,7 @@ import { styleFormDescription, styleFormInput, styleFormTitle } from '../../them
 type emailData = {
   email: string;
 };
+
 type emailFormProp = emailData & {
   updateFields: (fields: Partial<emailData>) => void;
 };

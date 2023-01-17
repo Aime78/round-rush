@@ -1,4 +1,4 @@
-import { Stack, Box, TextField, Typography, MenuItem, Checkbox, FormControlLabel } from '@mui/material';
+import { Stack, Box, TextField, Typography, MenuItem, Checkbox } from '@mui/material';
 import { styleFormDescription, styleFormTitle } from '../../theme/customTheme';
 import { companyDescriptionStyle, companyInputStyle } from './companyInfoStyle';
 
@@ -27,7 +27,7 @@ export const CompanyInfoForm = ({ companyName, spaceName, industry, employees, d
         <Typography sx={{ ...companyDescriptionStyle }}>Your space will be</Typography>
         <TextField
           size="small"
-          sx={{ ...companyInputStyle, border: `${doescompanyExist ? 'none' : '1px solid #D9DBDE'}` }}
+          sx={{ ...companyInputStyle }}
           label="Your space will be"
           value={spaceName}
           onChange={(e) => updateFields({ spaceName: e.target.value })}

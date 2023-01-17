@@ -1,1 +1,2 @@
-export const companies = ['lastingdynamics'];
+export const companiesNames = ['lastingdynamics'];
+export const companiesEmails = ['lastingdyanmics@gmail.com'];

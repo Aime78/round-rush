@@ -4,7 +4,7 @@ import Roundrush from '../../assets/Logo';
 import { authStyle, authStyleChildren, authStyleTypo } from './authStyle';
 
 interface AuthLayoutProps {
-  isLastStep: boolean;
+  isLastStep?: boolean;
   description: string;
   children: ReactNode;
 }

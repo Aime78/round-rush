@@ -6,6 +6,7 @@ type NamePasswordData = {
   fullName: string;
   password: string;
 };
+
 type NamePasswordFormProps = NamePasswordData & {
   updateFields: (fields: Partial<NamePasswordData>) => void;
 };

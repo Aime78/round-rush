@@ -1,5 +1,5 @@
-import { Stack, TextField, Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import { TextField, Typography } from '@mui/material';
+
 import { styleFormDescription, styleFormInput, styleFormTitle } from '../../theme/customTheme';
 
 type NamePasswordData = {

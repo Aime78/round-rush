@@ -23,6 +23,10 @@ const SignupPage = () => {
     });
   };
 
+  /**
+   * Checking that the company's email has been used before
+   * and then redirect the user to authentication
+   */
   const checkCompanyEmail = () => {
     const isCompanyEmailthere = companiesEmails.includes(data.email);
     if (isCompanyEmailthere) {
@@ -30,6 +34,11 @@ const SignupPage = () => {
     }
   };
 
+  /**
+   * Checking that the company name space has been used before.
+   * @returns
+   * Create a new company.
+   */
   const signUp = async () => {
     const isCompanythere = companiesNames.includes(data.spaceName);
     if (isCompanythere) {

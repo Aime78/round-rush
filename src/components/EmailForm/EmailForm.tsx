@@ -1,6 +1,5 @@
 import { TextField, Typography } from '@mui/material';
 import { styleFormDescription, styleFormInput, styleFormTitle } from '../../theme/customTheme';
-// import { emailDescription, emailInput, emailTitle } from './emailstyle';
 
 type emailData = {
   email: string;

@@ -1,3 +1,14 @@
 {
-  "companies": []
+  "companies": [
+    {
+      "email": "lastingdyanmics1@gmail.com",
+      "fullName": "lasting ",
+      "password": "qZ5ci9Ne!wGXHA",
+      "companyName": "lasting dynamics",
+      "spaceName": "lastingdynamic",
+      "industry": "software",
+      "employees": "10-100",
+      "id": 1
+    }
+  ]
 }

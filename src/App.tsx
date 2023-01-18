@@ -6,6 +6,7 @@ import SignupPage from './pages/SignupPage';
 import appRoutes from './routes/routes';
 import EmailexistsPage from './pages/EmailexitsPage';
 import EmailVerifiedPage from './pages/EmailVerifiedPage';
+import ResetPasswordPage from './pages/ResetPasswordPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path={appRoutes.HOME} element={<h1>Welcome to our app</h1>} />
         <Route path={appRoutes.LOGIN} element={<LoginPage />} />
+        <Route path={appRoutes.RESETPASSWORD} element={<ResetPasswordPage />} />
         <Route path={appRoutes.SIGNUP} element={<SignupPage />} />
         <Route path={appRoutes.EMAILVERIFICATION} element={<EmailVerifiedPage />} />
         <Route path={appRoutes.EMAILEXIST} element={<EmailexistsPage />} />

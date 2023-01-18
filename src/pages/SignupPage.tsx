@@ -62,7 +62,7 @@ const SignupPage = () => {
   return (
     <AuthLayout isLastStep={isLastStep} description="signing up a new account">
       {step}
-      <Box sx={{ width: '100%' }} mt={2}>
+      <Box sx={{ width: `${isLastStep ? '90%' : '100%'}` }} mt={2}>
         {isLastStep ? (
           <Button variant="contained" onClick={signUp} sx={{ width: '100%', background: '#29C293' }}>
             Register

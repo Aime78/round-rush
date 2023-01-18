@@ -31,3 +31,8 @@ export const styleFormInput = {
   borderRadius: '4px',
   color: '#ADB0B8',
 };
+
+export const buttonStyle = {
+  padding: '10px 50px',
+  textTransform: 'none',
+};

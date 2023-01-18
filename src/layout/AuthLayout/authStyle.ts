@@ -8,14 +8,14 @@ export const authStyle = {
 };
 
 export const authStyleChildren = {
-  width: '400px',
+  width: '600px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   background: '#FFFFFF',
   borderRadius: '6px',
   boxShadow: 1,
-  padding: '50px 60px',
+  padding: '50px 100px',
 };
 
 export const authStyleTypo = {

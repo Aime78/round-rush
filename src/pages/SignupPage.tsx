@@ -11,6 +11,7 @@ import { companiesEmails, companiesNames } from '../data/companies';
 import AuthLayout from '../layout/AuthLayout/AuthLayout';
 import { signUpcompany } from '../services/signUpcompany';
 import appRoutes from '../routes/routes';
+import { buttonStyle } from '../theme/customTheme';
 
 const SignupPage = () => {
   const [data, setData] = useState(USER_INITIAL_DATA);
@@ -64,7 +65,7 @@ const SignupPage = () => {
       {step}
       <Box sx={{ width: `${isLastStep ? '90%' : '100%'}` }} mt={2}>
         {isLastStep ? (
-          <Button variant="contained" onClick={signUp} sx={{ width: '100%', background: '#29C293' }}>
+          <Button variant="contained" onClick={signUp} sx={{ ...buttonStyle, width: '100%', background: '#29C293' }}>
             Register
           </Button>
         ) : (
@@ -75,7 +76,7 @@ const SignupPage = () => {
               checkCompanyEmail();
               next();
             }}
-            sx={{ width: '100%' }}
+            sx={{ ...buttonStyle, width: '100%' }}
           >
             Next
           </Button>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { TextField, Typography, Button, Link, Box, Alert } from '@mui/material';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
-import { styleFormInput, styleFormTitle } from '../../theme/customTheme';
+import { buttonStyle, styleFormInput, styleFormTitle } from '../../theme/customTheme';
 import appRoutes from '../../routes/routes';
 import { useAuth } from '../../hooks/useAuth';
 
@@ -27,7 +27,7 @@ export const Login = () => {
 
       <TextField size="small" sx={{ ...styleFormInput }} type="email" label="Inserisci la tua email" value={userData.email} onChange={(e) => setUserData({ ...userData, email: e.target.value })} />
       <TextField size="small" sx={{ ...styleFormInput }} type="password" label="Password" value={userData.password} onChange={(e) => setUserData({ ...userData, password: e.target.value })} />
-      <Button sx={{ width: '100%', margin: '10px 0' }} color="primary" variant="contained" onClick={handleLogin}>
+      <Button sx={{ ...buttonStyle, width: '100%' }} color="primary" variant="contained" onClick={handleLogin}>
         Login
       </Button>
       <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>

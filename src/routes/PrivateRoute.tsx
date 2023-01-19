@@ -3,9 +3,9 @@ import { useAppSelector } from '../app/features/hooks';
 import appRoutes from './routes';
 
 const PrivateRoutes = () => {
-  let auth = useAppSelector((state) => state.user.user);
+  let authUser = useAppSelector((state) => state.user.user);
 
-  return auth.length === 0 ? <Navigate to={appRoutes.LOGIN} /> : <Outlet />;
+  return authUser.authenticated ? <Outlet /> : <Navigate to={appRoutes.LOGIN} />;
 };
 
 export default PrivateRoutes;

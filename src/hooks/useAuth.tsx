@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authUser } from '../app/features/Auth/authSlice';
-import { useAppDispatch } from '../app/features/hooks';
+import { useAppDispatch, useAppSelector } from '../app/features/hooks';
 import { userEmails, userPasswords } from '../data/companies';
 import appRoutes from '../routes/routes';
 
@@ -13,7 +13,6 @@ type EmailPassword = {
 export const useAuth = (emailPassword: EmailPassword) => {
   const [errorAlert, setErrorAlert] = useState(false);
   const navigate = useNavigate();
-
   const dispatch = useAppDispatch();
 
   const handleLogin = () => {

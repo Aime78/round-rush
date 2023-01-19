@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
-import { convertToObject } from 'typescript';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { authUser } from '../app/features/Auth/authSlice';
-import { useAppDispatch, useAppSelector } from '../app/features/hooks';
+import { useAppDispatch } from '../app/features/hooks';
+import { userEmails, userPasswords } from '../data/companies';
+import appRoutes from '../routes/routes';
 
 type EmailPassword = {
   email: string;
@@ -10,34 +12,21 @@ type EmailPassword = {
 
 export const useAuth = (emailPassword: EmailPassword) => {
   const [errorAlert, setErrorAlert] = useState(false);
+  const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
-  //   const user = useAppSelector((state) => state.user);
 
   const handleLogin = () => {
-    dispatch(authUser(emailPassword));
-    // console.log('action has been dispatched.');
-
-    // if (user.loading === false && user.user.length !== 0) {
-    //   console.log('user has submitted the right credentials');
-    // }
-
-    // console.log('inside:', user);
+    const isEmailthere = userEmails.includes(emailPassword.email);
+    const isPasswordthere = userPasswords.includes(emailPassword.password);
+    if (isEmailthere && isPasswordthere) {
+      dispatch(authUser(emailPassword));
+      navigate(appRoutes.HOME);
+      setErrorAlert(false);
+    } else {
+      setErrorAlert(true);
+    }
   };
 
-  //   const checkLogin = () => {
-  //     console.log('checkLogin: ', user);
-  //   };
-  //   checkLogin();
-
-  //   useEffect(() => {
-  //     if (user.user.length === 0) {
-  //       console.log('userLength is true:', user);
-  //     } else {
-  //       console.log('userLength is false:', user);
-  //     }
-  //   }, [user]);
-  //   console.log('outside:', user);
-
-  return { handleLogin };
+  return { handleLogin, errorAlert };
 };

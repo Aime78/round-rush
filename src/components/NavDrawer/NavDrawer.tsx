@@ -17,8 +17,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { BoardIcon, CompanyLogo, HelpIcon, HomeIcon, LogoutIcon, SettingsIcon, TeamIcon } from '../../assets/DrawerIcons';
+import { BoardIcon, CompanyLogo, HelpIcon, HomeIcon, LogoutIcon, MenuIconDrawer, RectangleIconOne, RectangleIconThree, RectangleIconTwo, SettingsIcon, TeamIcon } from '../../assets/DrawerIcons';
 import { ExpandMore } from '@mui/icons-material';
+import { LogoRoundrush } from '../../assets/Logo';
 
 const drawerWidth = 240;
 
@@ -29,6 +30,8 @@ const openedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.enteringScreen,
   }),
   overflowX: 'hidden',
+  background: '#31394E',
+  color: '#FFFFFF',
 });
 
 const closedMixin = (theme: Theme): CSSObject => ({
@@ -40,6 +43,8 @@ const closedMixin = (theme: Theme): CSSObject => ({
   width: `calc(${theme.spacing(7)} + 1px)`,
   [theme.breakpoints.up('sm')]: {
     width: `calc(${theme.spacing(8)} + 1px)`,
+    background: '#31394E',
+    color: '#FFFFFF',
   },
 });
 
@@ -112,17 +117,66 @@ const upperElements = [
     icon: <SettingsIcon />,
   },
 ];
+const middleElements1 = [
+  {
+    id: 1,
+    icon: <RectangleIconOne />,
+    text: 'Coraly Tech & Dev',
+  },
+  {
+    id: 2,
+    icon: <RectangleIconTwo />,
+    text: 'Design Board',
+  },
+  {
+    id: 3,
+    icon: <RectangleIconThree />,
+    text: 'Growth Hacking',
+  },
+];
+
+const middleElements2 = [
+  {
+    id: 1,
+    icon: <RectangleIconOne />,
+    text: 'Website',
+  },
+  {
+    id: 2,
+    icon: <RectangleIconTwo />,
+    text: 'Growth Hacking',
+  },
+  {
+    id: 3,
+    icon: <RectangleIconThree />,
+    text: 'UI / UX Design',
+  },
+];
+
+const middleElements3 = [
+  {
+    id: 1,
+    icon: <RectangleIconOne />,
+    text: 'VL - Tech & Dev',
+  },
+  {
+    id: 2,
+    icon: <RectangleIconTwo />,
+    text: 'VL - Growth Hacking',
+  },
+];
+
 const lowerElements = [
   {
-    id: 4,
+    id: 1,
     icon: <LogoutIcon />,
   },
   {
-    id: 5,
+    id: 2,
     icon: <HelpIcon />,
   },
   {
-    id: 6,
+    id: 3,
     icon: <Avatar sx={{ width: '26px', height: '26px' }} alt="Cindy Baker" src="https://source.unsplash.com/mEZ3PoFGs_k" />,
   },
 ];
@@ -161,12 +215,18 @@ export const NavDrawer = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" open={open} sx={{ background: '#31394E', color: 'white' }}>
+      <Drawer variant="permanent" open={open}>
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>{theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}</IconButton>
+          <LogoRoundrush />
+
+          <IconButton onClick={handleDrawerClose}>
+            <MenuIconDrawer />
+          </IconButton>
+
+          {/* <IconButton onClick={handleDrawerClose}>{theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}</IconButton> */}
         </DrawerHeader>
         <Divider />
-        <List sx={{ backgroundColor: 'black', color: 'white' }}>
+        <List>
           {upperElements.map(({ id, text, icon }) => (
             <ListItem key={id} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
@@ -190,18 +250,100 @@ export const NavDrawer = () => {
             </ListItem>
           ))}
         </List>
-        <Divider />
-        <Accordion sx={{ backgroundColor: 'black', color: 'white' }}>
-          <AccordionSummary expandIcon={<ExpandMore />}>
-            <Stack>
-              <TeamIcon />
-              <Typography>Teams</Typography>
-            </Stack>
-          </AccordionSummary>
-          <AccordionDetails></AccordionDetails>
-        </Accordion>
+        <Divider sx={{ background: '#FFFFFF' }} />
+        {open ? (
+          <Accordion sx={{ background: '#31394E', color: '#FFFFFF' }}>
+            <AccordionSummary expandIcon={<ExpandMore sx={{ color: '#FFFFFF' }} />}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: '25px', ml: open ? '4px' : 12 }}>
+                <TeamIcon />
+                <Typography sx={{ opacity: open ? 1 : 0 }}>Teams</Typography>
+              </Box>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>Coraly</Typography>
+              <List>
+                {middleElements1.map(({ id, text, icon }) => (
+                  <ListItem key={id} disablePadding sx={{ display: 'block' }}>
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: open ? 'initial' : 'center',
+                        px: 2.5,
+                      }}
+                    >
+                      <ListItemIcon
+                        sx={{
+                          minWidth: 0,
+                          mr: open ? 3 : 'auto',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        {icon}
+                      </ListItemIcon>
+                      <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+              <Typography>Lasting Dynamics</Typography>
+              <List>
+                {middleElements2.map(({ id, text, icon }) => (
+                  <ListItem key={id} disablePadding sx={{ display: 'block' }}>
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: open ? 'initial' : 'center',
+                        px: 2.5,
+                      }}
+                    >
+                      <ListItemIcon
+                        sx={{
+                          minWidth: 0,
+                          mr: open ? 3 : 'auto',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        {icon}
+                      </ListItemIcon>
+                      <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+              <Typography>Vetrina Live</Typography>
+              <List>
+                {middleElements3.map(({ id, text, icon }) => (
+                  <ListItem key={id} disablePadding sx={{ display: 'block' }}>
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: open ? 'initial' : 'center',
+                        px: 2.5,
+                      }}
+                    >
+                      <ListItemIcon
+                        sx={{
+                          minWidth: 0,
+                          mr: open ? 3 : 'auto',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        {icon}
+                      </ListItemIcon>
+                      <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </AccordionDetails>
+          </Accordion>
+        ) : (
+          <Box sx={{ padding: '20px' }}>
+            <TeamIcon />
+          </Box>
+        )}
 
-        <List sx={{ backgroundColor: 'black', color: 'white', display: `${open ? 'flex' : 'block'}` }}>
+        <List sx={{ display: `${open ? 'flex' : 'block'}` }}>
           {lowerElements.map(({ id, icon }) => (
             <ListItem key={id} disablePadding sx={{ display: 'block' }}>
               <ListItemButton

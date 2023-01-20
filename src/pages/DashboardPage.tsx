@@ -1,5 +1,7 @@
+import NavDrawer from '../components/NavDrawer';
+
 const DashboardPage = () => {
-  return <div> DashboardPage</div>;
+  return <NavDrawer />;
 };
 
 export default DashboardPage;

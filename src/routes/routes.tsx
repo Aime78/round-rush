@@ -1,5 +1,6 @@
 const appRoutes = {
   HOME: '/',
+  DASHBOARD: '/dashboard',
   LOGIN: '/login',
   RESETPASSWORD: '/resetpassword',
   SIGNUP: '/signup',

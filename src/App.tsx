@@ -8,6 +8,7 @@ import EmailexistsPage from './pages/EmailexitsPage';
 import EmailVerifiedPage from './pages/EmailVerifiedPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import PrivateRoutes from './routes/PrivateRoute';
+import DashboardPage from './pages/DashboardPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route element={<PrivateRoutes />}>
           <Route path={appRoutes.HOME} element={<h1>Welcome to our app</h1>} />
         </Route>
+        <Route path={appRoutes.DASHBOARD} element={<DashboardPage />} />
         <Route path={appRoutes.LOGIN} element={<LoginPage />} />
         <Route path={appRoutes.RESETPASSWORD} element={<ResetPasswordPage />} />
         <Route path={appRoutes.SIGNUP} element={<SignupPage />} />

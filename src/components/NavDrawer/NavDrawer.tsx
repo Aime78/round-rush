@@ -185,18 +185,21 @@ export const NavDrawer = () => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
+  // const handleDrawerOpen = () => {
+  //   setOpen(true);
+  // };
+  const toggleDrawer = () => {
+    setOpen(!open);
   };
 
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  // const handleDrawerClose = () => {
+  //   setOpen(false);
+  // };
 
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      {/* <AppBar position="fixed" open={open}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -214,12 +217,14 @@ export const NavDrawer = () => {
             Mini variant drawer
           </Typography>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
       <Drawer variant="permanent" open={open}>
-        <DrawerHeader>
-          <LogoRoundrush />
+        <DrawerHeader sx={{ display: 'flex', justifyContent: open ? 'space-between' : 'center' }}>
+          <IconButton sx={{ display: open ? 'block' : 'none' }}>
+            <LogoRoundrush />
+          </IconButton>
 
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={toggleDrawer}>
             <MenuIconDrawer />
           </IconButton>
 
@@ -251,122 +256,124 @@ export const NavDrawer = () => {
           ))}
         </List>
         <Divider sx={{ background: '#FFFFFF' }} />
-        {open ? (
-          <Accordion sx={{ background: '#31394E', color: '#FFFFFF' }}>
-            <AccordionSummary expandIcon={<ExpandMore sx={{ color: '#FFFFFF' }} />}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: '25px', ml: open ? '4px' : 12 }}>
-                <TeamIcon />
-                <Typography sx={{ opacity: open ? 1 : 0 }}>Teams</Typography>
-              </Box>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>Coraly</Typography>
-              <List>
-                {middleElements1.map(({ id, text, icon }) => (
-                  <ListItem key={id} disablePadding sx={{ display: 'block' }}>
-                    <ListItemButton
-                      sx={{
-                        minHeight: 48,
-                        justifyContent: open ? 'initial' : 'center',
-                        px: 2.5,
-                      }}
-                    >
-                      <ListItemIcon
+        <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          {open ? (
+            <Accordion sx={{ background: '#31394E', color: '#FFFFFF', borderBottom: 'none' }}>
+              <AccordionSummary expandIcon={<ExpandMore sx={{ color: '#FFFFFF' }} />}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: '25px', ml: open ? '4px' : 12 }}>
+                  <TeamIcon />
+                  <Typography sx={{ opacity: open ? 1 : 0 }}>Teams</Typography>
+                </Box>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography sx={{ fontWeight: '700', fontSize: '14px' }}>Coraly</Typography>
+                <List>
+                  {middleElements1.map(({ id, text, icon }) => (
+                    <ListItem key={id} disablePadding sx={{ display: 'block' }}>
+                      <ListItemButton
                         sx={{
-                          minWidth: 0,
-                          mr: open ? 3 : 'auto',
-                          justifyContent: 'center',
+                          minHeight: 48,
+                          justifyContent: open ? 'initial' : 'center',
+                          px: 2.5,
                         }}
                       >
-                        {icon}
-                      </ListItemIcon>
-                      <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                    </ListItemButton>
-                  </ListItem>
-                ))}
-              </List>
-              <Typography>Lasting Dynamics</Typography>
-              <List>
-                {middleElements2.map(({ id, text, icon }) => (
-                  <ListItem key={id} disablePadding sx={{ display: 'block' }}>
-                    <ListItemButton
-                      sx={{
-                        minHeight: 48,
-                        justifyContent: open ? 'initial' : 'center',
-                        px: 2.5,
-                      }}
-                    >
-                      <ListItemIcon
+                        <ListItemIcon
+                          sx={{
+                            minWidth: 0,
+                            mr: 1,
+                            justifyContent: 'center',
+                          }}
+                        >
+                          {icon}
+                        </ListItemIcon>
+                        <Typography sx={{ fontSize: '12px', fontWeight: 500 }}>{text}</Typography>
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+                </List>
+                <Typography sx={{ fontWeight: '700', fontSize: '14px' }}>Lasting Dynamics</Typography>
+                <List>
+                  {middleElements2.map(({ id, text, icon }) => (
+                    <ListItem key={id} disablePadding sx={{ display: 'block' }}>
+                      <ListItemButton
                         sx={{
-                          minWidth: 0,
-                          mr: open ? 3 : 'auto',
-                          justifyContent: 'center',
+                          minHeight: 48,
+                          justifyContent: open ? 'initial' : 'center',
+                          px: 2.5,
                         }}
                       >
-                        {icon}
-                      </ListItemIcon>
-                      <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                    </ListItemButton>
-                  </ListItem>
-                ))}
-              </List>
-              <Typography>Vetrina Live</Typography>
-              <List>
-                {middleElements3.map(({ id, text, icon }) => (
-                  <ListItem key={id} disablePadding sx={{ display: 'block' }}>
-                    <ListItemButton
-                      sx={{
-                        minHeight: 48,
-                        justifyContent: open ? 'initial' : 'center',
-                        px: 2.5,
-                      }}
-                    >
-                      <ListItemIcon
+                        <ListItemIcon
+                          sx={{
+                            minWidth: 0,
+                            mr: 1,
+                            justifyContent: 'center',
+                          }}
+                        >
+                          {icon}
+                        </ListItemIcon>
+                        <Typography sx={{ fontSize: '12px', fontWeight: 500 }}>{text}</Typography>
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+                </List>
+                <Typography sx={{ fontWeight: '700', fontSize: '14px' }}>Vetrina Live</Typography>
+                <List>
+                  {middleElements3.map(({ id, text, icon }) => (
+                    <ListItem key={id} disablePadding sx={{ display: 'block' }}>
+                      <ListItemButton
                         sx={{
-                          minWidth: 0,
-                          mr: open ? 3 : 'auto',
-                          justifyContent: 'center',
+                          minHeight: 48,
+                          justifyContent: open ? 'initial' : 'center',
+                          px: 2.5,
                         }}
                       >
-                        {icon}
-                      </ListItemIcon>
-                      <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                    </ListItemButton>
-                  </ListItem>
-                ))}
-              </List>
-            </AccordionDetails>
-          </Accordion>
-        ) : (
-          <Box sx={{ padding: '20px' }}>
-            <TeamIcon />
-          </Box>
-        )}
+                        <ListItemIcon
+                          sx={{
+                            minWidth: 0,
+                            mr: open ? 3 : 'auto',
+                            justifyContent: 'center',
+                          }}
+                        >
+                          {icon}
+                        </ListItemIcon>
+                        <Typography sx={{ fontSize: '12px', fontWeight: 500 }}>{text}</Typography>
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+                </List>
+              </AccordionDetails>
+            </Accordion>
+          ) : (
+            <Box sx={{ padding: '20px' }}>
+              <TeamIcon />
+            </Box>
+          )}
 
-        <List sx={{ display: `${open ? 'flex' : 'block'}` }}>
-          {lowerElements.map(({ id, icon }) => (
-            <ListItem key={id} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
+          <List sx={{ display: `${open ? 'flex' : 'block'}`, flexDirection: 'row-reverse' }}>
+            {lowerElements.map(({ id, icon }) => (
+              <ListItem key={id} disablePadding sx={{ display: 'block' }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
+                    minHeight: 48,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
                   }}
                 >
-                  {icon}
-                </ListItemIcon>
-                {/* <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} /> */}
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {icon}
+                  </ListItemIcon>
+                  {/* <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} /> */}
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+
         {/* <Stack sx={{ backgroundColor: 'black' }}>
           <LogoutIcon />
           <HelpIcon />

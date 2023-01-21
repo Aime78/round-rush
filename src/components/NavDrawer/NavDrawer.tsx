@@ -181,9 +181,13 @@ const lowerElements = [
   },
 ];
 
-export const NavDrawer = () => {
+type NavDrawerProps = {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+};
+export const NavDrawer = ({ open, setOpen }: NavDrawerProps) => {
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   // const handleDrawerOpen = () => {
   //   setOpen(true);
@@ -381,7 +385,7 @@ export const NavDrawer = () => {
           <Avatar alt="Cindy Baker" src="https://source.unsplash.com/mEZ3PoFGs_k" />
         </Stack> */}
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      {/* <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo vel.
@@ -397,7 +401,7 @@ export const NavDrawer = () => {
           senectus et. Adipiscing elit duis tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla posuere
           sollicitudin aliquam ultrices sagittis orci a.
         </Typography>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

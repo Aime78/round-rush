@@ -17,7 +17,7 @@ const ProjectPage = () => {
         <Box sx={{ padding: '20px 50px 0 50px' }}>
           <AppHeaderLayout leftContainer={<ProjectheaderLeft />} rightContainer={<ProjectheaderRight />} open={open} />
         </Box>
-        <Divider />
+        <Divider variant="inset" sx={{ marginLeft: '110px' }} />
         <AppMainLayout open={open}>
           <Objectives />
         </AppMainLayout>

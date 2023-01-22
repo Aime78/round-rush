@@ -9,6 +9,7 @@ import EmailVerifiedPage from './pages/EmailVerifiedPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import PrivateRoutes from './routes/PrivateRoute';
 import DashboardPage from './pages/DashboardPage';
+import ProjectPage from './pages/ProjectPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path={appRoutes.HOME} element={<h1>Welcome to our app</h1>} />
         </Route>
         <Route path={appRoutes.DASHBOARD} element={<DashboardPage />} />
+        <Route path={appRoutes.PROJECT} element={<ProjectPage />} />
         <Route path={appRoutes.LOGIN} element={<LoginPage />} />
         <Route path={appRoutes.RESETPASSWORD} element={<ResetPasswordPage />} />
         <Route path={appRoutes.SIGNUP} element={<SignupPage />} />

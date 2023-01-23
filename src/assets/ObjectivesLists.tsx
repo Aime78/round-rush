@@ -1,4 +1,4 @@
-import { AvatarGroup, Avatar } from '@mui/material';
+import { AvatarGroup, Avatar, Tooltip } from '@mui/material';
 
 export const Urgent = () => {
   return (
@@ -73,9 +73,15 @@ const Assignees = () => {
   return (
     <>
       <AvatarGroup max={3}>
-        <Avatar alt="Remy Sharp" src="https://source.unsplash.com/MTZTGvDsHFY" />
-        <Avatar alt="Travis Howard" src="https://source.unsplash.com/iFgRcqHznqg" />
-        <Avatar alt="Cindy Baker" src="https://source.unsplash.com/rDEOVtE7vOs" />
+        <Tooltip title="Remy Sharp" placement="top-start" arrow>
+          <Avatar sx={{ width: '30px', height: '30px' }} alt="Remy Sharp" src="https://source.unsplash.com/MTZTGvDsHFY" />
+        </Tooltip>
+        <Tooltip title="Travis Howard" placement="top-start" arrow>
+          <Avatar sx={{ width: '30px', height: '30px' }} alt="Travis Howard" src="https://source.unsplash.com/iFgRcqHznqg" />
+        </Tooltip>
+        <Tooltip title="Cindy Baker" placement="top-start" arrow>
+          <Avatar sx={{ width: '30px', height: '30px' }} alt="Cindy Baker" src="https://source.unsplash.com/rDEOVtE7vOs" />
+        </Tooltip>
       </AvatarGroup>
     </>
   );

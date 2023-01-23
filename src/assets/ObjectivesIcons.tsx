@@ -1,3 +1,5 @@
+import { Avatar, Typography, Box } from '@mui/material';
+
 export const SearchIcon = () => {
   return (
     <>
@@ -120,6 +122,94 @@ export const CloseIcon = () => {
         <path
           d="M12 10.5859L16.9497 5.63615C17.3403 5.24563 17.9734 5.24563 18.364 5.63615C18.7545 6.02668 18.7545 6.65984 18.364 7.05037L13.4142 12.0001L18.364 16.9499C18.7545 17.3404 18.7545 17.9736 18.364 18.3641C17.9734 18.7546 17.3403 18.7546 16.9497 18.3641L12 13.4143L7.05025 18.3641C6.65972 18.7546 6.02656 18.7546 5.63603 18.3641C5.24551 17.9736 5.24551 17.3404 5.63603 16.9499L10.5858 12.0001L5.63603 7.05037C5.24551 6.65984 5.24551 6.02668 5.63603 5.63615C6.02656 5.24563 6.65972 5.24563 7.05025 5.63615L12 10.5859Z"
           fill="#4C84FF"
+        />
+      </svg>
+    </>
+  );
+};
+
+export const PriorityIcon = () => {
+  return (
+    <>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="5.8335" r="2.5" fill="#FD5461" />
+        <circle cx="14.1667" cy="14.1665" r="2.5" fill="#FD5461" />
+        <ellipse cx="5.83333" cy="14.1665" rx="2.5" ry="2.5" fill="#FD5461" />
+      </svg>
+    </>
+  );
+};
+
+export const WebappIcon = () => {
+  return (
+    <>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M17.5 5.00016H8.84837L8.24536 3.79415C8.1042 3.51183 7.81565 3.3335 7.50001 3.3335H2.50001C2.03977 3.3335 1.66667 3.70659 1.66667 4.16683V15.8335C1.66667 16.2937 2.03977 16.6668 2.50001 16.6668H17.5C17.9602 16.6668 18.3333 16.2937 18.3333 15.8335V5.8335C18.3333 5.37326 17.9602 5.00016 17.5 5.00016ZM3.33334 15.0002V5.00016H6.98498L7.58798 6.20617C7.72914 6.48849 8.01769 6.66683 8.33334 6.66683H16.6667V15.0002H3.33334Z"
+          fill="#4C84FF"
+        />
+      </svg>
+    </>
+  );
+};
+
+const CancelIcon = () => {
+  return (
+    <>
+      <svg width="20" height="20" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M12.283 10.5859L17.2328 5.63615C17.6233 5.24563 18.2565 5.24563 18.647 5.63615C19.0375 6.02668 19.0375 6.65984 18.647 7.05037L13.6972 12.0001L18.647 16.9499C19.0375 17.3404 19.0375 17.9736 18.647 18.3641C18.2565 18.7546 17.6233 18.7546 17.2328 18.3641L12.283 13.4143L7.33327 18.3641C6.94274 18.7546 6.30958 18.7546 5.91905 18.3641C5.52853 17.9736 5.52853 17.3404 5.91905 16.9499L10.8688 12.0001L5.91905 7.05037C5.52853 6.65984 5.52853 6.02668 5.91905 5.63615C6.30958 5.24563 6.94274 5.24563 7.33327 5.63615L12.283 10.5859Z"
+          fill="#4C84FF"
+        />
+      </svg>
+    </>
+  );
+};
+
+export const AssigneeOne = () => {
+  return (
+    <Box sx={{ padding: '6px', display: 'flex', gap: '5px', alignItems: 'center', background: 'rgba(0, 121, 255, 0.296258)', borderRadius: '7.5px' }}>
+      <Avatar sx={{ width: '20px', height: '20px' }} alt="Iene Robert" src="https://source.unsplash.com/IF9TK5Uy-KI" />
+      <Typography sx={{ fontSize: '12.5px', color: '#0079FF' }}>Iene Robert</Typography>
+      <CancelIcon />
+    </Box>
+  );
+};
+
+export const AssigneeTwo = () => {
+  return (
+    <Box sx={{ padding: '6px', display: 'flex', gap: '5px', alignItems: 'center', background: 'rgba(0, 121, 255, 0.296258)', borderRadius: '7.5px' }}>
+      <Avatar sx={{ width: '20px', height: '20px' }} alt="Iene Robert" src="https://source.unsplash.com/iEEBWgY_6lA" />
+      <Typography sx={{ fontSize: '12.5px', color: '#0079FF' }}>Kristin Rich</Typography>
+      <CancelIcon />
+    </Box>
+  );
+};
+
+export const AddNotificationIcon = () => {
+  return (
+    <>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M10.8333 10.8333V16.6667C10.8333 17.1269 10.4602 17.5 10 17.5C9.53976 17.5 9.16667 17.1269 9.16667 16.6667V10.8333H3.33333C2.8731 10.8333 2.5 10.4602 2.5 10C2.5 9.53976 2.8731 9.16667 3.33333 9.16667H9.16667V3.33333C9.16667 2.8731 9.53976 2.5 10 2.5C10.4602 2.5 10.8333 2.8731 10.8333 3.33333V9.16667H16.6667C17.1269 9.16667 17.5 9.53976 17.5 10C17.5 10.4602 17.1269 10.8333 16.6667 10.8333H10.8333Z"
+          fill="#4C84FF"
+        />
+      </svg>
+    </>
+  );
+};
+
+export const DotsIcon = () => {
+  return (
+    <>
+      <svg width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4ZM8 4C9.10457 4 10 3.10457 10 2C10 0.89543 9.10457 0 8 0C6.89543 0 6 0.89543 6 2C6 3.10457 6.89543 4 8 4ZM16 2C16 3.10457 15.1046 4 14 4C12.8954 4 12 3.10457 12 2C12 0.89543 12.8954 0 14 0C15.1046 0 16 0.89543 16 2Z"
+          fill="#ADB0B8"
         />
       </svg>
     </>

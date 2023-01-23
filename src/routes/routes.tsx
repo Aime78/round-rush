@@ -2,6 +2,7 @@ const appRoutes = {
   HOME: '/',
   DASHBOARD: '/dashboard',
   PROJECT: '/project',
+  SPACESETTINGS: '/spacesettings',
   LOGIN: '/login',
   RESETPASSWORD: '/resetpassword',
   SIGNUP: '/signup',

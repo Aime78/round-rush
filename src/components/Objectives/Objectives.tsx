@@ -57,7 +57,7 @@ export const Objectives = () => {
         </Box>
       </Box>
       <Box mt={2}>
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} sx={{ boxShadow: 'none' }}>
           <Table sx={{ width: '100%' }} aria-label="simple table">
             <TableHead>
               <TableRow>

@@ -10,7 +10,8 @@ import ResetPasswordPage from './pages/ResetPasswordPage';
 import PrivateRoutes from './routes/PrivateRoute';
 import DashboardPage from './pages/DashboardPage';
 import ProjectPage from './pages/ProjectPage';
-import SpaceSettingsPage from './pages/SpaceSettingsPage';
+import SpaceSettingsInfoPage from './pages/SpaceSettingsInfoPage';
+import SpaceSettingsMembersPage from './pages/SpaceSettingsMembersPage';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         </Route>
         <Route path={appRoutes.DASHBOARD} element={<DashboardPage />} />
         <Route path={appRoutes.PROJECT} element={<ProjectPage />} />
-        <Route path={appRoutes.SPACESETTINGS} element={<SpaceSettingsPage />} />
+        <Route path={appRoutes.SPACESETTINGSINFO} element={<SpaceSettingsInfoPage />} />
+        <Route path={appRoutes.SPACESETTINGSMEMBERS} element={<SpaceSettingsMembersPage />} />
         <Route path={appRoutes.LOGIN} element={<LoginPage />} />
         <Route path={appRoutes.RESETPASSWORD} element={<ResetPasswordPage />} />
         <Route path={appRoutes.SIGNUP} element={<SignupPage />} />

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { styled, useTheme, Theme, CSSObject, Box, Avatar, Stack, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
+import { styled, useTheme, Theme, CSSObject, Box, Avatar, Stack, Accordion, AccordionSummary, AccordionDetails, Link } from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -20,6 +20,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import { BoardIcon, CompanyLogo, HelpIcon, HomeIcon, LogoutIcon, MenuIconDrawer, RectangleIconOne, RectangleIconThree, RectangleIconTwo, SettingsIcon, TeamIcon } from '../../assets/DrawerIcons';
 import { ExpandMore } from '@mui/icons-material';
 import { LogoRoundrush } from '../../assets/Logo';
+import appRoutes from '../../routes/routes';
 
 const drawerWidth = 240;
 
@@ -109,12 +110,20 @@ const upperElements = [
   {
     id: 3,
     text: 'Dashboard',
-    icon: <HomeIcon />,
+    icon: (
+      <Link href={appRoutes.DASHBOARD}>
+        <HomeIcon />
+      </Link>
+    ),
   },
   {
     id: 4,
     text: 'Space Settings',
-    icon: <SettingsIcon />,
+    icon: (
+      <Link href={appRoutes.SPACESETTINGSINFO}>
+        <SettingsIcon />
+      </Link>
+    ),
   },
 ];
 const middleElements1 = [
@@ -169,7 +178,12 @@ const middleElements3 = [
 const lowerElements = [
   {
     id: 1,
-    icon: <LogoutIcon />,
+    icon: (
+      <Link href={appRoutes.LOGIN}>
+        {' '}
+        <LogoutIcon />
+      </Link>
+    ),
   },
   {
     id: 2,

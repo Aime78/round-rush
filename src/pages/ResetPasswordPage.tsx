@@ -1,7 +1,7 @@
 import { Button, Link } from '@mui/material';
-import ResetPassword from '../components/ResetPassword';
-import ResetPasswordNewPass from '../components/ResetPasswordNewPass';
-import { ResetPasswordSuccess } from '../components/ResetPasswordSucess/ResetPasswordSuccess';
+import ResetPassword from '../components/Authentication/ResetPassword';
+import ResetPasswordNewPass from '../components/Authentication/ResetPasswordNewPass';
+import { ResetPasswordSuccess } from '../components/Authentication/ResetPasswordSucess/ResetPasswordSuccess';
 import { useMultistepForm } from '../hooks/useMultistepForm';
 import { useNavigate } from 'react-router-dom';
 import AuthLayout from '../layout/AuthLayout/AuthLayout';

@@ -1,12 +1,12 @@
 import { Box, Divider } from '@mui/material';
-import NavDrawer from '../components/NavDrawer';
+import NavDrawer from '../components/Navigation/NavDrawer';
 import AppHeaderLayout from '../layout/AppHeaderLayout/AppHeaderLayout';
 import AppLayout from '../layout/AppLayout/AppLayout';
-import DashboardHeaderLeft from '../components/DashboardHeaderLeft';
+import DashboardHeaderLeft from '../components/Board/DashboardHeaderLeft';
 import AppMainLayout from '../layout/AppMainLayout/AppMainLayout';
-import DashboardHeaderRight from '../components/DashboardHeaderRight';
-import BoardProjects from '../components/BoardProjects';
-import BoardTasks from '../components/BoardTasks';
+import DashboardHeaderRight from '../components/Board/DashboardHeaderRight';
+import BoardProjects from '../components/Board/BoardProjects';
+import BoardTasks from '../components/Board/BoardTasks';
 
 const DashboardPage = () => {
   return (

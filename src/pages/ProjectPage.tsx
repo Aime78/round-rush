@@ -1,11 +1,11 @@
 import { Box, Divider } from '@mui/material';
-import NavDrawer from '../components/NavDrawer';
+import NavDrawer from '../components/Navigation/NavDrawer';
 import AppLayout from '../layout/AppLayout/AppLayout';
 import AppHeaderLayout from '../layout/AppHeaderLayout/AppHeaderLayout';
-import ProjectheaderLeft from '../components/ProjectheaderLeft';
-import ProjectheaderRight from '../components/ProjectheaderRight';
+import ProjectheaderLeft from '../components/Projects/ProjectheaderLeft';
+import ProjectheaderRight from '../components/Projects/ProjectheaderRight';
 import AppMainLayout from '../layout/AppMainLayout/AppMainLayout';
-import Objectives from '../components/Objectives';
+import Objectives from '../components/Projects/Objectives';
 
 const ProjectPage = () => {
   return (

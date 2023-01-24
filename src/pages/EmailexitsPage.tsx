@@ -1,4 +1,4 @@
-import Emailexists from '../components/Emailexists';
+import Emailexists from '../components/Authentication/Emailexists';
 import AuthLayout from '../layout/AuthLayout/AuthLayout';
 
 const EmailexistsPage = () => {

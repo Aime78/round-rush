@@ -1,9 +1,9 @@
 import { Box, Divider } from '@mui/material';
 import Members from '../components/Members';
-import NavDrawer from '../components/NavDrawer';
-import SpacesettingsHeaderRight from '../components/SpacesettigsHeaderRIght';
-import SpaceSettings from '../components/SpaceSettings';
-import SpacesttingsHeaderLeft from '../components/SpacesettingsHeaderLeft';
+import NavDrawer from '../components/Navigation/NavDrawer';
+import SpacesettingsHeaderRight from '../components/Space/SpacesettigsHeaderRIght';
+import SpaceSettings from '../components/Space/SpaceSettings';
+import SpacesttingsHeaderLeft from '../components/Space/SpacesettingsHeaderLeft';
 import AppHeaderLayout from '../layout/AppHeaderLayout/AppHeaderLayout';
 import AppLayout from '../layout/AppLayout/AppLayout';
 import AppMainLayout from '../layout/AppMainLayout/AppMainLayout';

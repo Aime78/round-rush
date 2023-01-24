@@ -1,4 +1,4 @@
-import EmailVerification from '../components/Emailverification';
+import EmailVerification from '../components/Authentication/Emailverification';
 import AuthLayout from '../layout/AuthLayout/AuthLayout';
 
 const EmailVerifiedPage = () => {

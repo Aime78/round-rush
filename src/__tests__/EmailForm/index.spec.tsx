@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import EmailForm from '../../components/EmailForm';
+import EmailForm from '../../components/Registration/EmailForm';
 
 const props = {
   email: '',

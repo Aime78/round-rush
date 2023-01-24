@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import CompanyInfoForm from '../../components/CompanyInfoForm/index';
+import CompanyInfoForm from '../../components/Registration/CompanyInfoForm/index';
 
 const props = {
   companyName: 'calvin',

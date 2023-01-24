@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import EmailForm from '../components/EmailForm';
+import EmailForm from '../components/Registration/EmailForm';
 import { Button, Box } from '@mui/material';
-import NamePasswordForm from '../components/NamePasswordForm';
-import CompanyInfoForm from '../components/CompanyInfoForm';
+import NamePasswordForm from '../components/Registration/NamePasswordForm';
+import CompanyInfoForm from '../components/Registration/CompanyInfoForm';
 import { useMultistepForm } from '../hooks/useMultistepForm';
 import { USER_INITIAL_DATA } from '../constants/USER_INITIAL_DATA';
 import { UserDataInterface } from '../types/userDataInterface';

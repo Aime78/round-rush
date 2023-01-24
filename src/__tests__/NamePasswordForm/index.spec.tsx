@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import NamePasswordForm from '../../components/NamePasswordForm';
+import NamePasswordForm from '../../components/Registration/NamePasswordForm';
 
 const props = {
   fullName: '',

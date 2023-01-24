@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 import { ReactNode } from 'react';
 import { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { styled } from '@mui/material';
+import { useAppSelector } from '../../app/features/hooks';
 
 const drawerWidth = 240;
 interface AppBarProps extends MuiAppBarProps {
@@ -29,9 +30,9 @@ const AppMain = styled(Box, {
 
 type AppMainLayoutProps = {
   children: ReactNode;
-  open: boolean;
 };
-const AppMainLayout = ({ children, open }: AppMainLayoutProps) => {
+const AppMainLayout = ({ children }: AppMainLayoutProps) => {
+  const { open } = useAppSelector((state) => state.drawer);
   return <AppMain open={open}>{children}</AppMain>;
 };
 

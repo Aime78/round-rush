@@ -1,5 +1,4 @@
 import { Box, Divider } from '@mui/material';
-import { useState } from 'react';
 import Members from '../components/Members';
 import NavDrawer from '../components/NavDrawer';
 import SpacesettingsHeaderRight from '../components/SpacesettigsHeaderRIght';
@@ -10,16 +9,15 @@ import AppLayout from '../layout/AppLayout/AppLayout';
 import AppMainLayout from '../layout/AppMainLayout/AppMainLayout';
 
 const SpaceSettingsMembersPage = () => {
-  const [open, setOpen] = useState(false);
   return (
     <AppLayout>
-      <NavDrawer open={open} setOpen={setOpen} />
+      <NavDrawer />
       <Box>
         <Box sx={{ padding: '20px 50px ' }}>
-          <AppHeaderLayout leftContainer={<SpacesttingsHeaderLeft />} rightContainer={<SpacesettingsHeaderRight />} open={open} />
+          <AppHeaderLayout leftContainer={<SpacesttingsHeaderLeft />} rightContainer={<SpacesettingsHeaderRight />} />
         </Box>
         <Divider variant="inset" sx={{ marginLeft: '110px' }} />
-        <AppMainLayout open={open}>
+        <AppMainLayout>
           <Box sx={{ display: 'flex' }}>
             <SpaceSettings />
             <Divider orientation="vertical" variant="middle" sx={{ margin: '60px 30px ', height: '80vh' }} flexItem />

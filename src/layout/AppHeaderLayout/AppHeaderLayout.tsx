@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 import { ReactNode } from 'react';
 import { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { styled } from '@mui/material';
+import { useAppSelector } from '../../app/features/hooks';
 
 const drawerWidth = 240;
 interface AppBarProps extends MuiAppBarProps {
@@ -31,9 +32,10 @@ type AppHeaderLayoutProps = {
   leftContainer: ReactNode;
 
   rightContainer: React.ReactNode;
-  open: boolean;
 };
-const AppHeaderLayout = ({ leftContainer, rightContainer, open }: AppHeaderLayoutProps) => {
+const AppHeaderLayout = ({ leftContainer, rightContainer }: AppHeaderLayoutProps) => {
+  const { open } = useAppSelector((state) => state.drawer);
+
   return (
     <AppBar open={open} sx={{ display: 'flex', justifyContent: 'space-between' }}>
       {leftContainer}

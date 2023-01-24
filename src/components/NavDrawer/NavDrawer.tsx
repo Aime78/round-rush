@@ -21,6 +21,8 @@ import { BoardIcon, CompanyLogo, HelpIcon, HomeIcon, LogoutIcon, MenuIconDrawer,
 import { ExpandMore } from '@mui/icons-material';
 import { LogoRoundrush } from '../../assets/Logo';
 import appRoutes from '../../routes/routes';
+import { useAppDispatch, useAppSelector } from '../../app/features/hooks';
+import { openDrawer } from '../../app/features/Drawer/drawerSlice';
 
 const drawerWidth = 240;
 
@@ -179,8 +181,7 @@ const lowerElements = [
   {
     id: 1,
     icon: (
-      <Link href={appRoutes.LOGIN}>
-        {' '}
+      <Link href={appRoutes.LOGIN} onClick={() => localStorage.clear()}>
         <LogoutIcon />
       </Link>
     ),
@@ -195,24 +196,17 @@ const lowerElements = [
   },
 ];
 
-type NavDrawerProps = {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-};
-export const NavDrawer = ({ open, setOpen }: NavDrawerProps) => {
-  const theme = useTheme();
-  // const [open, setOpen] = useState(false);
+// type NavDrawerProps = {
+//   open: boolean;
+//   setOpen: (open: boolean) => void;
+// };
+export const NavDrawer = () => {
+  const { open } = useAppSelector((state) => state.drawer);
+  const dispatch = useAppDispatch();
 
-  // const handleDrawerOpen = () => {
-  //   setOpen(true);
-  // };
   const toggleDrawer = () => {
-    setOpen(!open);
+    dispatch(openDrawer(!open));
   };
-
-  // const handleDrawerClose = () => {
-  //   setOpen(false);
-  // };
 
   return (
     <Box sx={{ display: 'flex' }}>

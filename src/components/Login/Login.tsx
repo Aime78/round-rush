@@ -30,7 +30,7 @@ export const Login = () => {
       <Button sx={{ ...buttonStyle, width: '100%' }} color="primary" variant="contained" onClick={handleLogin}>
         Login
       </Button>
-      <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+      <Box mt={2} sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
         <Link href={appRoutes.RESETPASSWORD} color="primary" underline="hover">
           I forgot my password
         </Link>

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Box, Divider } from '@mui/material';
 import NavDrawer from '../components/NavDrawer';
 import AppHeaderLayout from '../layout/AppHeaderLayout/AppHeaderLayout';
@@ -10,22 +9,21 @@ import BoardProjects from '../components/BoardProjects';
 import BoardTasks from '../components/BoardTasks';
 
 const DashboardPage = () => {
-  const [open, setOpen] = useState(false);
   return (
     <AppLayout>
-      <NavDrawer open={open} setOpen={setOpen} />
+      <NavDrawer />
       <Box>
         <Box sx={{ padding: '20px 50px ' }}>
-          <AppHeaderLayout leftContainer={<DashboardHeaderLeft />} rightContainer={<DashboardHeaderRight />} open={open} />
+          <AppHeaderLayout leftContainer={<DashboardHeaderLeft />} rightContainer={<DashboardHeaderRight />} />
         </Box>
         <Divider variant="inset" sx={{ marginLeft: '110px' }} />
 
-        <AppMainLayout open={open}>
+        <AppMainLayout>
           <Box sx={{ display: 'flex' }}>
             <BoardProjects />
             <Divider orientation="vertical" variant="middle" sx={{ marginTop: '110px' }} flexItem />
 
-            <BoardTasks open={open} />
+            <BoardTasks />
           </Box>
         </AppMainLayout>
       </Box>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authUser } from '../app/features/Auth/authSlice';
-import { useAppDispatch, useAppSelector } from '../app/features/hooks';
+import { useAppDispatch } from '../app/features/hooks';
 import { userEmails, userPasswords } from '../data/companies';
 import appRoutes from '../routes/routes';
 
@@ -20,7 +20,7 @@ export const useAuth = (emailPassword: EmailPassword) => {
     const isPasswordthere = userPasswords.includes(emailPassword.password);
     if (isEmailthere && isPasswordthere) {
       dispatch(authUser(emailPassword));
-      navigate(appRoutes.HOME);
+      navigate(appRoutes.DASHBOARD);
       setErrorAlert(false);
     } else {
       setErrorAlert(true);

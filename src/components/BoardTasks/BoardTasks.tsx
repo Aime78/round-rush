@@ -1,20 +1,22 @@
-import { Box, Typography, List, ListItem } from '@mui/material';
+import { Box, Typography, List, ListItem, Link } from '@mui/material';
+import { useAppSelector } from '../../app/features/hooks';
 import { GotoProjectIcon, TwelveIcon } from '../../assets/DashboardIcons';
 import tasksOne, { TwentyFourIcon } from '../../assets/DashboardTaskIcons';
+import appRoutes from '../../routes/routes';
 
-type BoardTasksProps = {
-  open: boolean;
-};
+export const BoardTasks = () => {
+  const { open } = useAppSelector((state) => state.drawer);
 
-export const BoardTasks = ({ open }: BoardTasksProps) => {
   return (
     <Box sx={{ width: '40%', padding: '60px 50px 0 20px' }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <Typography sx={{ fontSize: '26px', fontWeight: '600', fontStyle: 'normal', color: '#4C84FF' }}>Marketing</Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer' }}>
-          <Typography sx={{ fontSize: '12px', fontWeight: '400', color: '#838895' }}>Go to the project</Typography>
-          <GotoProjectIcon />
-        </Box>
+        <Link href={appRoutes.PROJECT} underline="hover">
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer' }}>
+            <Typography sx={{ fontSize: '12px', fontWeight: '400', color: '#838895' }}>Go to the project</Typography>
+            <GotoProjectIcon />
+          </Box>
+        </Link>
       </Box>
       <Box sx={{ display: 'flex', gap: '10px', alignItems: 'center' }} mt={6}>
         <Typography sx={{ fontSize: '18px', color: '#31394E' }}>Todos</Typography>

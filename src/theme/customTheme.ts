@@ -27,7 +27,6 @@ export const styleFormInput = {
   margin: '10px 0',
   width: '100%',
   background: '#FFFFFF',
-  // border: '1px solid #D9DBDE',
   borderRadius: '4px',
   color: '#ADB0B8',
 };

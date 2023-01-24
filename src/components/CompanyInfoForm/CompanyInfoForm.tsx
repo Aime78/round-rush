@@ -1,4 +1,4 @@
-import { Stack, Box, TextField, Typography, MenuItem, Checkbox } from '@mui/material';
+import { Box, TextField, Typography, MenuItem, Checkbox } from '@mui/material';
 import { styleFormDescription, styleFormTitle } from '../../theme/customTheme';
 import { companyDescriptionStyle, companyInputStyle } from './companyInfoStyle';
 
@@ -46,10 +46,10 @@ export const CompanyInfoForm = ({ companyName, spaceName, industry, employees, d
           <MenuItem value="10-100">10-100</MenuItem>
           <MenuItem value="100-1000">100-1000</MenuItem>
         </TextField>
-        <Stack direction="row">
+        <Box sx={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
           <Checkbox />
           <Typography sx={{ fontSize: '12px', color: '#5A6171' }}>Accetto le Condizioni di utilizzo e Informativa sulla Privacy</Typography>
-        </Stack>
+        </Box>
       </Box>
     </>
   );

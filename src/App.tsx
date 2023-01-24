@@ -18,12 +18,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <Routes>
         <Route element={<PrivateRoutes />}>
-          <Route path={appRoutes.HOME} element={<h1>Welcome to our app</h1>} />
+          <Route path={appRoutes.DASHBOARD} element={<DashboardPage />} />
+          <Route path={appRoutes.PROJECT} element={<ProjectPage />} />
+          <Route path={appRoutes.SPACESETTINGSINFO} element={<SpaceSettingsInfoPage />} />
+          <Route path={appRoutes.SPACESETTINGSMEMBERS} element={<SpaceSettingsMembersPage />} />
         </Route>
-        <Route path={appRoutes.DASHBOARD} element={<DashboardPage />} />
-        <Route path={appRoutes.PROJECT} element={<ProjectPage />} />
-        <Route path={appRoutes.SPACESETTINGSINFO} element={<SpaceSettingsInfoPage />} />
-        <Route path={appRoutes.SPACESETTINGSMEMBERS} element={<SpaceSettingsMembersPage />} />
         <Route path={appRoutes.LOGIN} element={<LoginPage />} />
         <Route path={appRoutes.RESETPASSWORD} element={<ResetPasswordPage />} />
         <Route path={appRoutes.SIGNUP} element={<SignupPage />} />

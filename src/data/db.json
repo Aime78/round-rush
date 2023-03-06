@@ -9,6 +9,26 @@
       "industry": "software",
       "employees": "10-100",
       "id": 1
+    },
+    {
+      "email": "alvincalvin8",
+      "fullName": "lastingdyanmics1@gmail.com",
+      "password": "qZ5ci9Ne!wGXHA",
+      "companyName": "lasting dynamics",
+      "spaceName": "lastingdyanmi@gmail.com",
+      "industry": "software",
+      "employees": "1-10",
+      "id": 2
+    },
+    {
+      "email": "alvincalvin7@gmail.com",
+      "fullName": "alvincalvin",
+      "password": "qZ5ci9Ne!wGXHA",
+      "companyName": "lastingdynamic",
+      "spaceName": "lastingdynamics2",
+      "industry": "software",
+      "employees": "1-10",
+      "id": 3
     }
   ]
 }

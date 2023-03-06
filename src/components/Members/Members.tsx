@@ -1,4 +1,4 @@
-import { Box, Typography, Avatar, tableCellClasses, Skeleton, Divider } from '@mui/material';
+import { Box, Typography, Avatar, Skeleton, Divider } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { DotsIcon } from '../../assets/ObjectivesIcons';
-import { useGetUsers } from '../../hooks/getUsers';
+import useGetUsers from '../../hooks/usegetUsers';
 
 export const Members = () => {
   const { users } = useGetUsers();

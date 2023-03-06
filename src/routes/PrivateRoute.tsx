@@ -1,5 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAppSelector } from '../app/features/hooks';
+
 import appRoutes from './routes';
 
 const PrivateRoutes = () => {

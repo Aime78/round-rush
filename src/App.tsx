@@ -23,6 +23,7 @@ function App() {
           <Route path={appRoutes.SPACESETTINGSINFO} element={<SpaceSettingsInfoPage />} />
           <Route path={appRoutes.SPACESETTINGSMEMBERS} element={<SpaceSettingsMembersPage />} />
         </Route>
+        <Route path={appRoutes.HOME} element={<LoginPage />} />
         <Route path={appRoutes.LOGIN} element={<LoginPage />} />
         <Route path={appRoutes.RESETPASSWORD} element={<ResetPasswordPage />} />
         <Route path={appRoutes.SIGNUP} element={<SignupPage />} />

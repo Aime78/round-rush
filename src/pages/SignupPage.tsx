@@ -9,9 +9,9 @@ import { USER_INITIAL_DATA } from '../constants/USER_INITIAL_DATA';
 import { UserDataInterface } from '../types/userDataInterface';
 import { companiesEmails, companiesNames } from '../data/companies';
 import AuthLayout from '../layout/AuthLayout/AuthLayout';
-import { signUpcompany } from '../services/signUpcompany';
 import appRoutes from '../routes/routes';
 import { buttonStyle } from '../theme/customTheme';
+import register from '../services/register';
 
 const SignupPage = () => {
   const [data, setData] = useState(USER_INITIAL_DATA);
@@ -46,8 +46,10 @@ const SignupPage = () => {
       setDoescompanyExist(true);
       return;
     }
-    const response = (await signUpcompany(data)) as any;
-    if (response.status === 201) {
+    const { email, password } = data;
+    const userCredential = (await register(email, password)) as any;
+
+    if (userCredential.user) {
       navigate(appRoutes.EMAILVERIFICATION);
     } else {
       navigate(appRoutes.SIGNUP);

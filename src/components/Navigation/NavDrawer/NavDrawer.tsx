@@ -18,6 +18,7 @@ import { LogoRoundrush } from '../../../assets/Logo';
 import appRoutes from '../../../routes/routes';
 import { useAppDispatch, useAppSelector } from '../../../app/features/hooks';
 import { openDrawer } from '../../../app/features/Drawer/drawerSlice';
+import signOutUser from '../../../services/signout';
 
 const drawerWidth = 240;
 
@@ -154,7 +155,13 @@ const lowerElements = [
   {
     id: 1,
     icon: (
-      <Link href={appRoutes.LOGIN} onClick={() => localStorage.clear()}>
+      <Link
+        href={appRoutes.LOGIN}
+        onClick={() => {
+          signOutUser();
+          localStorage.clear();
+        }}
+      >
         <LogoutIcon />
       </Link>
     ),
@@ -170,7 +177,7 @@ const lowerElements = [
 ];
 
 export const NavDrawer = () => {
-  const { open } = useAppSelector((state) => state.drawer);
+  const { open }: any = useAppSelector((state) => state.drawer);
   const dispatch = useAppDispatch();
 
   const toggleDrawer = () => {
